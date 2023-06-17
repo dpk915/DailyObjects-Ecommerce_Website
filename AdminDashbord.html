@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Admin Page</title>
+    <link rel="shortcut icon" href="./logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="admindashboard.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Daily Life Admin Page</h1>
+        <nav>
+            <ul>
+
+                <li><a href="./signin&signup.html">Login as a user</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="adminOrder.html">Orders</a></li>
+                <li>
+                    <a href="./admin-signin&signup.html"><img id="signin" style="height: 20px;width: 20px;" src="http://img.freepik.com/free-icon/user-image-with-black-background_318-34564.jpg?size=338&ext=jpg" /></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="todo">
+        <div>
+            <div><img src="https://images.meeshosupplyassets.com/growth/pending-orders-icon.svg" alt="Pending Orders icon"></div>
+            <div>
+                <p class="MuiTypography-root MuiTypography-body1 css-dvix8y">User Cart Pending Order</p>
+                <div>
+                    <h4 id="pending">0</h4>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div><img src="https://images.meeshosupplyassets.com/growth/pending-orders-icon.svg" alt="Pending Orders icon"></div>
+            <div>
+                <p class="MuiTypography-root MuiTypography-body1 css-dvix8y">Pending Order</p>
+                <div>
+                    <h4 id="checkout">0</h4>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div><img src="https://images.meeshosupplyassets.com/growth/out-of-stock-icon.svg" alt="Out of Stock icon"></div>
+            <div>
+                <p>Total Stock</p>
+                <div>
+                    <h4 id="zero stocks">0</h4>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div><img src="https://images.meeshosupplyassets.com/growth/low-stock-icon.svg" alt="Low Stock icon"></div>
+            <div>
+                <p class="MuiTypography-root MuiTypography-body1 css-dvix8y">Low Stock</p>
+                <div>
+                    <h4 id="low-stocks">0</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div id="addupdate">
+            <section class="add-product">
+                <h2>Add Product</h2>
+                <form id="add-product">
+                    <div>
+                        <label for="product-name">Product Name:</label>
+                        <input type="text" id="product-name" name="product-name" required>
+                    </div>
+                    <div>
+                        <label for="product-description">Product Description:</label>
+                        <textarea id="product-description" name="product-description" required></textarea>
+                    </div>
+                    <div>
+                        <label for="product-price">Product Price:</label>
+                        <input type="number" id="product-price" name="product-price" step="0.01" required>
+                    </div>
+                    <div>
+                        <label for="product-quantity">Product Quantity:</label>
+                        <input type="number" id="product-quantity" name="product-quantity" required>
+                    </div>
+                    <div>
+                        <label for="product-image">Product Image :1</label>
+                        <input type="link" id="product-image1" name="product-image" required>
+                    </div>
+                    <div>
+                        <label for="product-image">Product Image :2</label>
+                        <input type="link" id="product-image2" name="product-image">
+                    </div>
+                    <div>
+                        <label for="product-image">Product Image :3</label>
+                        <input type="link" id="product-image3" name="product-image">
+                    </div>
+                    <div>
+                        <label for="product-image">Product Image :4</label>
+                        <input type="link" id="product-image4" name="product-image">
+                    </div>
+                    <div>
+                        <label for="product-name">Category:</label>
+                        <select name="" id="category" required>
+                            <option value="CHARGING-SOLUTIONS">CHARGING-SOLUTIONS</option>
+                            <option value="WATCH-BANDS">appleBands</option>
+                            <option value="STANDS">stands</option>
+                            <option value="DRINKWARE">drinkware</option>
+                            <option value="SCREEN-GUARD">screenGaurd</option>
+                            <option value="PHONE-WALLETS">phoneWallets</option> 
+                          <option value="APPLE">Apple</option> 
+                        <option value="SAMSUNG">Samsung</option>
+                    <option value="ONEPLUS">OnePlus</option>  
+                <option value="NOTHING">nothing</option> 
+            <option value="GOOGLE">Google</option>       
+        <option value="MOTOROLA">Motorola</option> 
+    <option value="BACKPACKS">backpacks</option>       </select>
+                    </div>
+
+                    <button type="submit">Add Product</button>
+                </form>
+            </section>
+            <section class="add-product">
+                <h2>UPDATE PRODUCT</h2>
+                <form id="update-product">
+
+                    <div>
+                        <label for="product-id">Product Id:</label>
+                        <input type="text" id="productu-id" name="product-id">
+                    </div>
+                    <div>
+                        <label for="product-name">Product Name:</label>
+                        <input type="text" id="productu-name" name="product-name">
+                    </div>
+                    <div>
+                        <label for="product-description">Product Description:</label>
+                        <textarea id="productu-description" name="product-description"></textarea>
+                    </div>
+                    <div>
+                        <label for="product-price">Product Price:</label>
+                        <input type="number" id="productu-price" name="product-price" step="0.01">
+                    </div>
+                    <div>
+                        <label for="product-quantity">Product Quantity:</label>
+                        <input type="number" id="productu-quantity" name="product-quantity">
+                    </div>
+                    <div>
+                        <label for="product-image">Product Image :1</label>
+                        <input type="link" id="productu-image1" name="product-image">
+                    </div>
+                    <div>
+                        <label for="product-image">Product Image :2</label>
+                        <input type="link" id="productu-image2" name="product-image">
+                    </div>
+                    <div>
+                        <label for="product-image">Product Image :3</label>
+                        <input type="link" id="productu-image3" name="product-image">
+                    </div>
+                    <div>
+                        <label for="product-image">Product Image :4</label>
+                        <input type="link" id="productu-image4" name="product-image">
+                    </div>
+                    <div>
+                        <label for="product-name">Category:</label>
+                        <select name="" id="category1" required>
+                            <option value="CHARGING-SOLUTIONS">CHARGING-SOLUTIONS</option>
+                            <option value="WATCH-BANDS">appleBands</option>
+                            <option value="STANDS">stands</option>
+                            <option value="DRINKWARE">drinkware</option>
+                            <option value="SCREEN-GUARD">screenGaurd</option>
+                            <option value="PHONE-WALLETS">phoneWallets</option> 
+                          <option value="APPLE">Apple</option> 
+                        <option value="SAMSUNG">Samsung</option>
+                    <option value="ONEPLUS">OnePlus</option>  
+                <option value="NOTHING">nothing</option> 
+            <option value="GOOGLE">Google</option>       
+        <option value="MOTOROLA">Motorola</option> 
+    <option value="BACKPACKS">backpacks</option></select>
+                    </div>
+
+
+
+                    <button type="submit">UPDATE PRODUCT</button>
+                </form>
+            </section>
+
+        </div>
+
+
+
+        <div>
+            <section class="product-list">
+                <h2>Product List <span id="pcat"></span></h2>
+                <ul id="items">
+
+                </ul>
+                <div id="pagination"></div>
+
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Daily Life Admin Page</p>
+    </footer>
+</body>
+<script src="admindashboard.js"></script>
+
+</html>

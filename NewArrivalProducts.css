@@ -1,0 +1,72 @@
+#Products-container{
+    display: grid;;
+    grid-template-columns: repeat(4,1fr);
+    width: 95%;
+    margin: auto;
+    gap: 20px 20px;
+}  
+#Products-container p{
+    font-family: 'Graphik Regular', sans-serif;
+    line-height: 16px;
+    font-size: 13px;
+    color: rgba(0,0,0,.87);
+}
+.span1{
+    text-decoration: line-through;
+    padding-left: 15px;
+    color: #909090;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Trade Gothic LT Pro,sans-serif;
+    font-family: Graphik Regular,sans-serif!important;
+  }
+  .span2{
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Trade Gothic LT Pro,sans-serif;
+    font-family: Graphik Regular,sans-serif!important;
+  }
+  .pricediv{
+    display: flex;
+    align-items: center;
+    margin-bottom: 7%;
+  }
+#Products-container img{
+    width: 100%;
+    background-color: #F5F5F5;
+    opacity:0.8;
+    transition: 1s ease;
+    height: 400px;
+}
+#Products-container img:hover{
+    opacity:2;
+    transition: 1s ease;
+}
+#Products-container div:hover{
+    cursor: pointer;
+}
+#filter-div{
+    display: grid;;
+    grid-template-columns: repeat(6,1fr);
+    width: 40%;
+    margin: auto;
+    gap: 30px;
+    margin-bottom: 3%;
+    text-align: center;
+    font-family: 'Trade Gothic LT Pro', sans-serif !important;
+    color: #757575;
+    font-size: 12px;
+}
+#filter-div div:hover{
+    cursor: pointer;
+}
+#filter-div img{
+    border-radius: 50%;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 3%;
+    font-family: 'Graphik Regular', sans-serif;
+    color: rgba(0,0,0,.87);
+}

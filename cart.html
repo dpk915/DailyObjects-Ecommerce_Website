@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping-Hub - Women's Clothing, Accessories & Home</title>
+    <link rel="shortcut icon" href="./logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./single-product-page.css">
+
+
+    <!-- <link rel="icon" href="./favicon.jpeg"> -->
+    <style>
+        /* Write all necessery css here  */
+
+        body {
+            /* background: #ffe3e2; */
+            font-family: sans-serif;
+        }
+
+        .wrapper {
+            max-width: 95%;
+            margin: 0 auto;
+        }
+
+        .wrapper h1 {
+            padding: 20px 0;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .project {
+            display: flex;
+            height: 500px;
+            box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+        }
+
+        .shop {
+            flex: 60%;
+            overflow: hidden;
+            overflow-y: scroll;
+            /* height: 400px; */
+        }
+
+        .box {
+            display: flex;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background: #fff;
+            transition: all .6s ease;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .box:hover {
+            border: none;
+            transform: scale(1.01);
+        }
+
+        .box img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .content {
+            padding: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .content h3 {
+            margin-bottom: 30px;
+        }
+
+        .content h4 {
+            margin-bottom: 50px;
+            margin-right: 5px;
+        }
+
+        .btn-area {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 25px;
+            background-color: #3a71a9;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn-area:hover {
+            background-color: #76bfb6;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .unit input {
+            width: 40px;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .btn-area i {
+            margin-right: 5px;
+        }
+
+        .right-bar {
+            flex: 40%;
+            margin-left: 20px;
+            padding: 20px 100px;
+            height: 455px;
+            border-radius: 5px;
+            background: #fff;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            /* border: 1px solid red; */
+        }
+
+        .right-bar hr {
+            margin-bottom: 15px;
+        }
+
+        .right-bar p {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .right-bar h6 {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .right-bar a {
+            background-color: #76bfb6;
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+            font-weight: 900;
+        }
+
+        .right-bar i {
+            margin-right: 15px;
+        }
+
+        .right-bar a:hover {
+            background-color: #3972a7;
+        }
+
+        #checkout-btn {
+            background-color: #20a87e;
+            color: white;
+            font-size: 18px;
+            padding: 15px;
+            border: none;
+            width: 100%;
+            font-weight: bold;
+            box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+        }
+
+
+        #cupon-inp {
+            width: 300px;
+            padding: 7px;
+        }
+
+        #cupon-btn {
+            padding: 8px 15px;
+            background-color: #20a87e;
+            color: white;
+            border: none;
+        }
+
+        .priceCut {
+            text-decoration: line-through;
+            color: #909090;
+            display: block;
+            margin-bottom: 40px;
+        }
+
+        .remove {
+            margin-left: 70%;
+            padding: 10px 20px;
+            /* margin-top: -100px; */
+            background-color: red;
+            color: white;
+            border: none;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 5px;
+            position: absolute;
+            left: 0px;
+            ;
+            right: 0px;
+            margin-right: 50px;
+        }
+
+        .qty-btn {
+            margin: 10px;
+            background-color: #20a87e;
+            border: none;
+            color: white;
+            border-radius: 2px;
+            font-size: 16px;
+            padding: 4px 7px;
+        }
+
+        @media screen and (max-width: 700px) {
+            .content h3 {
+                margin-bottom: 15px;
+            }
+
+            .content h4 {
+                margin-bottom: 20px;
+            }
+
+            .btn2 {
+                display: none;
+            }
+
+            .box {
+                height: 150px;
+            }
+
+            .box img {
+                height: 150px;
+                width: 200px;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .project {
+                flex-direction: column;
+            }
+
+            .right-bar {
+                margin-left: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media screen and (max-width: 1250px) {
+            .wrapper {
+                max-width: 95%;
+            }
+        }
+
+
+
+        .card-list {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            width: 100%;
+            overflow: hidden;
+            overflow-x: scroll;
+        }
+
+        .card {
+            margin: 15px;
+        }
+
+        #title {
+            font-size: 13px;
+        }
+
+        #price {
+            font-size: 16px;
+            font-weight: bold;
+            /* text-decoration: none; */
+        }
+
+        .free-item {
+            font-size: 13px;
+            /* background-color: #20a87e; */
+        }
+
+        .add-to-cart {
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #20a87e;
+            color: white;
+            border: none;
+            padding: 10px 95px;
+            margin-bottom: 20px;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div id="logo">
+                <img src="./nav logo.jpeg"
+                    alt="">
+            </div>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="./NewArrivals.html">NEW ARRIVALS</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-items">
+                                <h3>NEW ARRIVALS</h3>
+                                <ul>
+                                    <li><a href="">Desks</a></li>
+                                    <li><a href="">Charging Solutions</a></li>
+                                    <li><a href="">Collections</a></li>
+                                    <li><a href="">Macbook Sleeves</a></li>
+                                    <li><a href="">Messenger Bags</a></li>
+                                    <li><a href="">Eyewear Cases</a></li>
+                                    <li><a href="">Watchbands</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-items-image">
+                                <img src="https://images.dailyobjects.com/marche/assets/images/other/recess-collection-dropdown-image-for-new-arrival.jpg?tr=cm-pad_crop,v-2?tr=cm-pad_resize,w-453,dpr-1"
+                                    alt="">
+                            </div>
+                            <div class="mega-menu-items-image">
+                                <img src="https://images.dailyobjects.com/marche/assets/images/other/recess-collection-dropdown-image-for-new-arrival.jpg?tr=cm-pad_crop,v-2?tr=cm-pad_resize,w-453,dpr-1"
+                                    alt="">
+                            </div>
+                            <div class="mega-menu-items-image">
+                                <img src="https://images.dailyobjects.com/marche/assets/images/other/recess-collection-dropdown-image-for-new-arrival.jpg?tr=cm-pad_crop,v-2?tr=cm-pad_resize,w-453,dpr-1"
+                                    alt="">
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="./Cases&Sleeves.html">CASES & SLEEVES</a>
+                        <div class="mega-menu-cases">
+                            <div class="mega-menu-cases-items">
+                                <h3>APPLE</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">iPhone 13</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone 14New</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone 14 Pro MaxNew</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone 14 ProNew</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone 14 PlusNew</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone 12</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone 13 Pro</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone 11</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone 13 Pro Max</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone XR</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone 12 Pro Max</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone 12 Pro</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone 12 Mini</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone 11 Pro</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone 11 Pro Max</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone X</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone SE 2020</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPhone XS</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-cases-items">
+                                <h3>SAMSUNG</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">Galaxy Z Fold</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Galaxy Z Fold 4</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Galaxy S22 Ultra</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Galaxy Z Fold 3</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Galaxy S20</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Galaxy S21 Ultra</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Galaxy S21</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Galaxy S21 FE</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Galaxy S21 Plus</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Galaxy S20 Plus</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Galaxy Z Flip 3</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Galaxy S22</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Galaxy A52</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Galaxy A51</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="mega-menu-cases-items">
+                                <h3>ONEPLUS</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">OnePlus 10R</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">OnePlus Nord</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">OnePlus 9R</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">OnePlus 9</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">OnePlus 8T</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">OnePlus 9RT</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">OnePlus 10 Pro</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">OnePlus 7</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">OnePlus 9 Pro</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">OnePlus 7T</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">OnePlus Nord CE</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">OnePlus 8</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">OnePlus 7 Pro</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-cases-items">
+                                <h3>OTHER BRANDS</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">Nothing</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Xiaomi</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Oppo</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Motrola</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Vivo</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="mega-menu-cases-items">
+                                <h3>IPAD</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">iPad Pro 11 2021</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">iPad Air 4 10.9</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">iPad 9 10.2</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">iPad 7 10.2</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">iPad 8 10.2</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">iPad Mini 6</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="mega-menu-cases-images">
+                                <div id="conext-type">
+                                    <h3><a href=""> LAPTOP/MACKBOOK SLEEVES</a></h3>
+                                    <h3><a href=""> AIRPOD CASES</a></h3>
+                                    <h3><a href=""> MESSENGER BAGS</a></h3>
+                                    <h3><a href=""> PASSPORT COVERS</a></h3>
+                                    <h3><a href=""> EYEWEAR CASES</a></h3>
+                                    <h3><a href=""> AIRTAG CASES</a></h3>
+                                </div>
+                                <div id="imag-1">
+                                    <img src="https://images.dailyobjects.com/marche/assets/images/other/airpods-cases-sleeves-page-dropdown-image.jpg?tr=cm-pad_crop,v-2,w-1000,w-240,h-653,dpr-1"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="./Accessories.html">ACCESSORIES</a>
+                        <div class="mega-menu-cases">
+                            <div class="mega-menu-cases-items">
+                                <h3>WATCH ACCESSORIES</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">Apple WatchBands</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Apple Watch Chargers</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Universal Watchbands</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Apple Watch Cases</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Apple Watch Stands</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-cases-items">
+                                <h3>SCREEN GAURD</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">For Mobile</a>
+                                    </li>
+                                    <li>
+                                        <a href="">For Apple Watch</a>
+                                    </li>
+                                    <li>
+                                        <a href="">For Mackbook</a>
+                                    </li>
+                                    <li>
+                                        <a href="">For iPad</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="mega-menu-cases-items">
+                                <h3>STANDS</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">For Apple Watch</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">For Mobile</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">For iPad</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">For Laptop</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">For Monitor</a>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                            <div class="mega-menu-cases-items">
+                                <h3>CHARGING SOLUTIONS</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">Wireless Chargers</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Chargers and Cables</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Apple Watch Chargers</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Chahrging Stations</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+
+                            <div class="mega-menu-cases-images">
+                                <div id="conext-type">
+                                    <h3><a href="">ORGANISERS</a> </h3>
+                                    <h3><a href="">PHONE WALLET</a> </h3>
+                                    <h3><a href="">KEYCHAIN</a> </h3>
+                                    <h3><a href="">DRINKWARE</a> </h3>
+                                    <h3><a href=""> EYEWEAR CASES</a></h3>
+                                    <h3><a href="">MASKS</a> </h3>
+                                </div>
+                                <div id="imag-2">
+                                    <img src="https://images.dailyobjects.com/marche/assets/images/other/accessories-update-1.jpg?tr=cm-pad_crop,v-2,w-1000,w-76,h-653,dpr-1"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="">SALE</a></li>
+
+                    <li>
+                        <a href="./Bags&Wallets.html">BAGS & WALLETS</a>
+                        <div class="mega-menu-cases">
+                            <div class="mega-menu-cases-items">
+                                <h3>WALLETS</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">Women's Wallets</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Card Wallets</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Men's Wallets</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Mobile Wallets</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Bi-Fold Wallets</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-cases-items">
+                                <h3>CROSSBODY BAGS</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">Tarp</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Box</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Scout</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Trapeze</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Orbis</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Tallboi</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Arch</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Shuttle Phone</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="mega-menu-cases-items">
+                                <h3>TOTE BAGS</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">Trap</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Buoyant</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Classic</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Fatty</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">08:01</a>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+
+
+
+                            <div class="mega-menu-cases-images">
+                                <div id="conext-type">
+                                    <h3><a href="">MESSENGER BAGS</a> </h3>
+                                    <h3><a href="">BAGPACKS</a> </h3>
+                                    <h3><a href="">DUFFLE BAGS</a> </h3>
+                                    <h3><a href="">POUCHES</a> </h3>
+
+                                </div>
+                                <div id="imag-3">
+                                    <img src="https://images.dailyobjects.com/marche/assets/images/other/bags-and-wallets-dropdown-update-4.jpg?tr=cm-pad_crop,v-2,w-1000,w-262,h-380,dpr-1"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="./HomeOffice.html">HOME OFFICE</a>
+                        <div class="mega-menu-cases">
+                            <div class="mega-menu-cases-items">
+                                <h3>STANDS</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">Watch</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Laptop</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Mobile</a>
+                                    </li>
+                                    <li>
+                                        <a href="">iPad</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Monitor</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-cases-items">
+                                <h3>ORGANISERS</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">Tech Kit</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Cable Organisers</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Pouches</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Folio</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="mega-menu-cases-items">
+                                <h3>Desks</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">Platform Collection</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Desk Mat</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Mouse Pad</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Trays & Coasters</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="mega-menu-cases-images">
+                                <div id="conext-type">
+                                    <h3><a href="">STATIONARY</a> </h3>
+                                    <h3><a href="">DRINKWARE</a> </h3>
+                                    <h3><a href="">CHARGING SOLUTIONS</a> </h3>
+                                    <!-- <h3><a href="">DRINKWARE</a> </h3>
+                                <h3><a href=""> EYEWEAR CASES</a></h3>
+                                <h3><a href="">MASKS</a> </h3> -->
+                                </div>
+                                <div id="imag-4">
+                                    <img src="https://images.dailyobjects.com/marche/assets/images/other/home-office-update-stationary-dropdown-up.png?tr=cm-pad_resize,v-2,w-1000,w-135,h-380,dpr-1"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="">COLLECTIONS</a>
+                        <div class="mega-menu-cases">
+                            <div class="mega-menu-cases-items">
+                                <h3>COLLECTION</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">Love Pack Collection</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Recess Collection</a>
+                                    </li>
+                                    <li>
+                                        <a href="">08:01 Collection</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Platform Collection</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Tarp Collection</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Fleet Collection</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="mega-menu-cases-items">
+                                <h3>STUDIO</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">Tarot Collection</a>
+                                    </li>
+                                    <li>
+                                        <a href="">DreamSpace Collection</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Mela collection</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ArcadelPxl collection</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Zodiac Collection</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Misfit Millennials Collection</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="mega-menu-cases-items">
+                                <h3>COLLABRATIONS</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">DailyObjects x Smartsters</a>
+                                    </li>
+
+                                    <!-- <li>
+                                    <a href="">For Mobile</a>
+                                </li>
+                                <li>
+                                    <a href="">For iPad</a>
+                                </li>
+                                <li>
+                                    <a href="">For Laptop</a>
+                                </li>
+                                <li>
+                                    <a href="">For Monitor</a>
+                                </li> -->
+
+
+                                </ul>
+                            </div>
+
+
+                            <div class="mega-menu-cases-images">
+                                <!-- <div  id="conext-type">
+                                <h3><a href="">ORGANISERS</a> </h3>
+                                <h3><a href="">PHONE WALLET</a> </h3>
+                                <h3><a href="">KEYCHAIN</a> </h3>
+                                <h3><a href="">DRINKWARE</a> </h3>
+                                <h3><a href=""> EYEWEAR CASES</a></h3>
+                                <h3><a href="">MASKS</a> </h3>
+                            </div> -->
+                                <div id="imag-5">
+                                    <img src="https://images.dailyobjects.com/marche/assets/images/other/new-collection-dropdown-desktop-update-3.jpg?tr=cm-pad_crop,v-2,w-1000,w-383,h-380,dpr-1"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="">GIFTING</a>
+                        <div class="mega-menu-cases">
+                            <div class="mega-menu-cases-items">
+                                <h3>WATCH ACCESSORIES</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">Apple WatchBands</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Apple Watch Chargers</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Universal Watchbands</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Apple Watch Cases</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Apple Watch Stands</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-cases-items">
+                                <h3>SCREEN GAURD</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">For Mobile</a>
+                                    </li>
+                                    <li>
+                                        <a href="">For Apple Watch</a>
+                                    </li>
+                                    <li>
+                                        <a href="">For Mackbook</a>
+                                    </li>
+                                    <li>
+                                        <a href="">For iPad</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="mega-menu-cases-items">
+                                <h3>STANDS</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">For Apple Watch</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">For Mobile</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">For iPad</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">For Laptop</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">For Monitor</a>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                            <div class="mega-menu-cases-items">
+                                <h3>CHARGING SOLUTIONS</h3>
+                                <ul>
+                                    <!-- <li><a href=""></a></li> -->
+                                    <li>
+                                        <a href="">Wireless Chargers</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Chargers and Cables</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Apple Watch Chargers</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">Chahrging Stations</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+
+                            <div class="mega-menu-cases-images">
+                                <!-- <div  id="conext-type">
+                                <h3><a href="">ORGANISERS</a> </h3>
+                                <h3><a href="">PHONE WALLET</a> </h3>
+                                <h3><a href="">KEYCHAIN</a> </h3>
+                                <h3><a href="">DRINKWARE</a> </h3>
+                                <h3><a href=""> EYEWEAR CASES</a></h3>
+                                <h3><a href="">MASKS</a> </h3>
+                            </div> -->
+                                <div id="imag-6">
+                                    <img src="https://images.dailyobjects.com/marche/assets/images/other/gifting-page-drop-down-banner-1-update-up.png?tr=cm-pad_resize,v-2,w-1000,w-151,h-380,dpr-1"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <!-- <div id="nav-context">
+            <h4><a href="">NEW ARRIVALS</a></h4>
+            <h4><a href="">CASES & SLEEVES
+                </a></h4>
+            <h4><a href=""> ACCESSORIES
+                </a></h4>
+            <h4><a href=""> SALE</a></h4>
+            <h4><a href=""> BAGS & WALLETS
+                </a></h4>
+            <h4><a href=""> HOME OFFICE
+                </a></h4>
+            <h4><a href=""> COLLECTIONS</a></h4>
+            <h4><a href=""> GIFTING</a></h4>
+        </div> -->
+            <div id="symbol">
+                <div>
+                    <button id="cart">
+                        <span>
+                            <a href=""><img
+                                    src="https://images.dailyobjects.com/marche/icons/Bag.png?tr=cm-pad_resize,v-2,w-16,h-16,dpr-1"
+                                    alt=""></a>
+
+                        </span>
+                        <span class="cartcount">0</span>
+                    </button>
+                    <button id="user">
+                        <span>
+                            <a href=""><img
+                                    src="https://images.dailyobjects.com/marche/icons/Profile.png?tr=cm-pad_resize,v-2,w-16,h-16,dpr-1"
+                                    alt=""></a>
+
+                        </span>
+                    </button>
+                    <button id="search">
+                        <span>
+                            <a href="./searchPage.html"><img
+                                    src="https://images.dailyobjects.com/marche/icons/Search.png?tr=cm-pad_resize,v-2,w-16,h-16,dpr-1"
+                                    alt=""></a>
+
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="wrapper">
+        <h1>SHOPPING BAG</h1>
+        <div class="project">
+            <div class="shop">
+                <!-- <div class="box">
+                    <img src="1.jpg">
+                    <div class="content">
+                        <h3>Women Lipsticks</h3>
+                        <h4><ins>1499</ins> <del>2999</del></h4>
+                        <button>-</button> 1 <button>+</button>
+                        <button class="remove">Remove</button>
+                    </div>
+                </div> -->
+            </div>
+            <div class="right-bar">
+                <!-- <form action="" id="cupon-form">
+                    <h6>CUPPONS & OFFERS</h6>
+                    <input type="text" id="cupon-inp">
+                    <input type="submit" value="APPLY" id="cupon-btn">
+                </form>
+                <hr>
+                <h6><span>ORDER SUMMARY</span></h6>
+
+                <p><span>Item Total (2 items)</span> <span style="font-weight: bold;">$15</span></p>
+            
+                <p><span style="color: red;">Discount</span> <span style="color: red;">$141</span></p>
+
+                <p><span>Shipping</span> <span style="color: red;">FREE</span></p>
+
+                <p><span>Grand Total</span> <span>$141</span></p>
+                <p><span style="font-size: 10px;">(Inclusive of Taxes)</span> <span
+                        style="font-size: 10px; color: red;">You
+                        Saved Rs</span></p>
+
+                <button id="checkout-btn">CHECKOUT</button> -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- recently viewed items -->
+    <!-- <div class="recently-viewed">
+        <div class="card-list">
+            <div class="card">
+                <img src="https://images.dailyobjects.com/marche/product-images/1805/dailyobjects-forest-green-cardsafe-leather-phone-wallet-images/dailyobjects-forest-green-cardsafe-leather-phone-wallet-2.png?tr=cm-pad_resize,v-2,w-228,h-281,dpr-1"
+                    alt="">
+                <p id="title">Forest Green CardSafe Leather Phone Wallet</p>
+                <p id="price"><ins>RS.699</ins>&nbsp;&nbsp;<del style="color: #909090;">1499</del></p>
+                <p class="free-item" style="color: red;">FREE DUFFLE BAG / KEYCHAIN SET</p>
+                <button class="add-to-cart">ADD</button>
+            </div>
+            
+        </div>
+    </div> -->
+    <h1>RECENTLY VIEWED</h1>
+    <div id="products-1"></div>
+
+</body>
+<script>
+    // Write all necessery JS here 
+
+    let storedata = JSON.parse(localStorage.getItem("cartdata")) || []
+
+    let container = document.querySelector(".shop")
+
+    // let disc = document.getElementById("cup-dis")
+    // let inputEl = document.getElementById("cupon-inp")
+    // let discountedValue = document.getElementById("discounted")
+    // let delchar = document.getElementById("delivery")
+
+    // let discountEl = 0;
+
+
+
+    function displayproduct(data) {
+        container.innerHTML = ""
+        storedata.forEach((product) => {
+
+            let div = document.createElement("div")
+            div.setAttribute("class", "box")
+
+            let childDiv = document.createElement("div")
+            childDiv.setAttribute("class", "content")
+
+            let image = document.createElement("img")
+            image.setAttribute("src", product.img)
+
+            let title = document.createElement("p");
+            title.innerText = product.name
+
+            let price = document.createElement("span");
+            price.innerText = "Rs." + product.price
+
+            let priceCut = document.createElement("span");
+            priceCut.setAttribute("class", "priceCut");
+
+            priceCut.textContent = product.price + 1000;
+
+            // detail.innerText = product.category
+
+            let quantity = document.createElement("span");
+            quantity.innerText = product.qty
+
+            let remove = document.createElement("button");
+            remove.setAttribute("class", "remove")
+
+            remove.innerText = "Remove";
+            remove.addEventListener("click", () => {
+                storedata = storedata.filter((element) => {
+                    return element.id !== product.id
+                })
+                localStorage.setItem("cartdata", JSON.stringify(storedata))
+                displayproduct()
+
+                location.reload()
+            })
+
+            let increment = document.createElement("button");
+            increment.setAttribute("class", "qty-btn")
+            increment.innerText = "+"
+            increment.addEventListener("click", () => {
+                product = product.qty++
+                localStorage.setItem("cartdata", JSON.stringify(storedata))
+                displayproduct()
+                window.location.reload()
+            })
+
+            let decrement = document.createElement("button");
+            decrement.setAttribute("class", "qty-btn")
+            decrement.innerText = "-"
+            decrement.addEventListener("click", () => {
+                if (product.qty > 1) {
+                    product = product.qty--
+                    localStorage.setItem("cartdata", JSON.stringify(storedata))
+                    displayproduct()
+                    window.location.reload()
+                }
+            })
+            childDiv.append(title, price, priceCut, increment, quantity, decrement, remove)
+            div.append(image, childDiv,)
+            container.append(div)
+
+        });
+
+        // let sum = 0;
+        // for (let i = 0; i < storedata.length; i++) {
+        //     sum += storedata[i].price * storedata[i].qty
+        // }
+        // total.innerText = "Rs." + sum
+
+
+        // let disvalue = sum + 12.5
+
+        // disc.innerText = "Rs." + disvalue
+
+        // let discont = document.getElementById("cupon-btn");
+
+        // discont.addEventListener("submit", (e) => {
+        //     e.preventDefault()
+
+        //     if (inputEl.value == "Masai20") {
+        //         disvalue = sum - (sum * 0.30) + 12.5
+
+        //         discountedValue.innerText = "Rs." + (sum * 0.30)
+        //         discountEl = (sum * 0.30);
+        //         disc.innerText = "Rs." + Number(disvalue)
+        //     }
+
+
+
+        // })
+
+    }
+    displayproduct()
+
+
+
+    // function checkout() {
+    //     window.location.href = "./checkoutpage.html"
+    // }
+
+    let Data = JSON.parse(localStorage.getItem("recently-viewed")) || [];
+
+    let cartData = JSON.parse(localStorage.getItem("cartdata")) || [];
+
+    let cont1 = document.getElementById("products-1")
+    displayRecentData(Data)
+
+    function displayRecentData(Data) {
+        Data.forEach((element) => {
+
+            let card = document.createElement("div");
+
+            let img = document.createElement("img");
+
+            let name = document.createElement("p");
+            name.setAttribute("class", "hidden")
+
+            let price = document.createElement("h4");
+
+            let add = document.createElement("button");
+            add.setAttribute("class", "add-to-cart");
+            add.textContent = "ADD";
+            // let obj = {};
+            // let cartData = [];
+            add.addEventListener("click", () => {
+                if (checkduplicate(element)) {
+                    alert("product already added in cart");
+                }
+                else {
+                    cartData.push({ ...element, qty: 1 });
+                    localStorage.setItem("cartdata", JSON.stringify(cartData));
+                    alert("product successfully added to cart")
+                    window.location.reload()
+                }
+            })
+            img.src = element.img;
+            name.textContent = element.name;
+            price.textContent = `Rs.${element.price}`;
+
+            cont1.append(card);
+            card.append(img, name, price, add)
+        });
+
+    }
+
+
+    function checkduplicate(element) {
+        for (let i = 0; i < cartData.length; i++) {
+            if (cartData[i].name === element.name) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    let rightDiv = document.querySelector(".right-bar");
+
+    let price = 0;
+
+    fetchdata()
+
+
+    function fetchdata() {
+
+
+        let masaiCoupon = 0;
+        console.log(masaiCoupon);
+
+
+        let datalength = storedata.length;
+        renderdata(storedata)
+        let a = 0;
+        function renderdata(storedata) {
+            for (let i = 0; i < storedata.length; i++) {
+                price += storedata[i].price * storedata[i].qty;
+
+            }
+        }
+        if (price >= 3000 && price < 5000) {
+            a = 200
+            masaiCoupon = a;
+        }
+        else if (price >= 5000) {
+            a = 500
+            masaiCoupon = a;
+        }
+        // else if(){
+
+        //     a = ;
+        // }
+
+
+        let shipping;
+
+        if (price < 2000) {
+            shipping = 125;
+        }
+        else if (price >= 2000) {
+            shipping = "FREE"
+        }
+
+        
+
+
+        function billing(price, datalength, a, shipping, masaiCoupon) {
+            let va = `
+                <form action="" id="cupon-form">
+                    <h6>CUPPONS & OFFERS</h6>
+                    <input type="text" id="cupon-inp">
+                    <input type="submit" value="APPLY" id="cupon-btn">
+                </form>
+                <hr>
+                <h6><span>ORDER SUMMARY</span></h6>
+
+                <p><span>Item Total ( ${datalength} items)</span> <span style="font-weight: bold;">Rs.${price}</span></p>
+                <!-- <hr> -->
+                <p><span style="color: red;">Discount</span> <span style="color: red;">${masaiCoupon.toFixed(2)}</span></p>
+
+                <p><span>Shipping</span> <span style="color: red;">${shipping}</span></p>
+
+                <p><span>Grand Total</span> <span>${price - masaiCoupon.toFixed(2)}</span></p>
+                <p><span style="font-size: 12px;">(Inclusive of Taxes)</span> <span
+                        style="font-size: 12px; color: red;">You
+                        Saved Rs.${masaiCoupon.toFixed(2)}</span></p>
+
+                <button id="checkout-btn">CHECKOUT</button>`
+            rightDiv.innerHTML = va;
+            console.log(rightDiv)
+
+
+            let formEl = document.getElementById("cupon-btn");
+            console.log(formEl)
+
+
+
+            formEl.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                let couponInput = document.getElementById("cupon-inp");
+
+                if (couponInput.value === "masai20") {
+
+                    masaiCoupon = price * 0.20;
+
+                    console.log(masaiCoupon)
+
+                    billing(price, datalength, a, shipping, masaiCoupon)
+                }
+            })
+
+            let checkoutbtn = document.getElementById("checkout-btn");
+
+            checkoutbtn.addEventListener("click",()=>{
+
+                let paymentdata = JSON.parse(localStorage.getItem("product-details"))
+
+                // paymentdata.push()
+
+                window.location.href = "http://127.0.0.1:5500/checkout.html"
+
+                
+                
+            })
+
+
+        }
+
+        billing(price, datalength, a, shipping, masaiCoupon)
+    }
+
+
+
+    let logo = document.getElementById("logo")
+    logo.addEventListener("click", () => {
+        window.location.href = "http://127.0.0.1:5500/index.html"
+    })
+
+
+    let cartcount = document.querySelector(".cartcount");
+
+    let cartdata = JSON.parse(localStorage.getItem("cartdata")) || [];
+    if (cartdata.length === 0) {
+        cartcount.style.display = "none"
+    }
+    cartcount.innerText = cartdata.length;
+
+    // let price = 0;
+    // let datalength = storedata.length;
+    // renderdata(storedata)
+    // let a = 0;
+    // function renderdata(storedata) {
+    //     for (let i = 0; i < storedata.length; i++) {
+    //         price += storedata[i].price;
+
+    //     }
+    // }
+    // if (price >= 3000 && price < 5000) {
+    //     a = 200
+    // }
+    // else if (price >= 5000) {
+    //     a = 500
+    // }
+    // let shipping;
+    // if (price < 2000) {
+    //     shipping = 125;
+    // }
+    // else if (price >= 2000) {
+    //     shipping = "FREE"
+    // }
+    // billing(price, datalength, a, shipping)
+    // function billing(price, datalength, a, shipping) {
+    //     let va = `
+    //             <form action="" id="cupon-form">
+    //                 <h6>CUPPONS & OFFERS</h6>
+    //                 <input type="text" id="cupon-inp">
+    //                 <input type="submit" value="APPLY" id="cupon-btn">
+    //             </form>
+    //             <hr>
+    //             <h6><span>ORDER SUMMARY</span></h6>
+
+    //             <p><span>Item Total ( ${datalength} items)</span> <span style="font-weight: bold;">Rs.${price}</span></p>
+    //             <!-- <hr> -->
+    //             <p><span style="color: red;">Discount</span> <span style="color: red;">${a}</span></p>
+
+    //             <p><span>Shipping</span> <span style="color: red;">${shipping}</span></p>
+
+    //             <p><span>Grand Total</span> <span>$141</span></p>
+    //             <p><span style="font-size: 10px;">(Inclusive of Taxes)</span> <span
+    //                     style="font-size: 10px; color: red;">You
+    //                     Saved Rs</span></p>
+
+    //             <button id="checkout-btn">CHECKOUT</button>`
+    //     rightDiv.innerHTML = va;
+
+    // }
+
+
+</script>
+
+</html>

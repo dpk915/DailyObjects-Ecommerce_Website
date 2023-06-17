@@ -1,0 +1,34 @@
+#category-container{
+    display: grid;;
+    grid-template-columns: repeat(4,1fr);
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    gap: 20px 20px;
+    font-family: 'Trade Gothic LT Pro', sans-serif !important;
+    font-size: 14px;
+    margin-top: 50px;
+}
+#category-container>div:hover{
+    cursor: pointer;
+}
+
+#category-container img{
+    width: 150PX;
+    border-radius: 50%;
+    /* border: solid red; */
+    height: 150PX;
+}
+#Product-Container h2{
+    text-align: center;
+    font-family: 'Trade Gothic LT Pro', sans-serif !important;
+    margin: 50px 0px;
+}
+#category-container div:hover{
+    cursor: pointer;
+}
+hr {
+    border-bottom: 1px solid hsla(0,0%,74.9%,.5019607843137255);
+    margin: 0;
+    opacity: .2;
+}

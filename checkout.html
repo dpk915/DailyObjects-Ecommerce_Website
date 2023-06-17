@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping-Hub - Women's Clothing, Accessories & Home</title>
+    <link rel="shortcut icon" href="./logo.jpeg" type="image/x-icon">
+
+    <!-- <script src="https://js.instamojo.com/v1/checkout.js"></script>
+    <script>
+      /* Start client-defined Callback Handler Functions */
+      function onOpenHandler () {
+        alert('Payments Modal is Opened');
+      }
+      function onCloseHandler () {
+        alert('Payments Modal is Closed');
+      }
+      function onPaymentSuccessHandler (response) {
+        alert('Payment Success');
+        console.log('Payment Success Response', response);
+      }
+      function onPaymentFailureHandler (response) {
+        alert('Payment Failure');
+        console.log('Payment Failure Response', response);
+      }
+      /* End client-defined Callback Handler Functions */
+      /* Configuring Handlers */
+      Instamojo.configure({
+        handlers: {
+          onOpen: onOpenHandler,
+          onClose: onCloseHandler,
+          onSuccess: onPaymentSuccessHandler,
+          onFailure: onPaymentFailureHandler
+        }
+      });
+      
+      function onButtonClick() {
+        Instamojo.open('https://www.instamojo.com/@shoppingHub06');
+      }
+    </script> -->
+
+    <style>
+        body{
+            background-color: white;
+        }
+
+        #cont{
+            width: 34%;
+            margin: auto;
+            margin-top: 100px;
+            padding: 20px 30px;
+            border: 1px solid black;
+            background-color:  #F5F5F5;
+            height: 500px;
+            border-radius: 10px;
+        }
+        #name{
+            width: 400px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #number{
+            width: 400px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .address{
+            width: 400px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #submit{
+            width: 405px;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #20a87e;
+            color: white;
+            margin-top: 80px;
+        }
+        #cont h1{
+            text-align: center;
+            color: black;
+            margin-bottom: 50px;
+        }
+        #pincode{
+          width: 100px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            padding: 5px;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        #select{
+          width: 150px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            padding: 5px;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <a href="https://www.instamojo.com/@shoppingHub06/" rel="im-checkout" data-text="Pay" data-css-style="color:#ffffff; background:#75c26a; width:300px; border-radius:4px"   data-layout="vertical"></a>
+<script src="https://js.instamojo.com/v1/button.js"></script> -->
+    
+
+    <div id="cont">
+        <h1>PAYMENT PAGE</h1>
+        <form action="">
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <input type="number" name="number" id="number" placeholder="Enter your number" required>
+            <input type="text" class="address" placeholder="Enter your address 1" required>
+            <input type="text" class="address" placeholder="Enter your address 2" required>
+
+            <input type="number" name="number" id="pincode" placeholder="Pincode" required>
+
+            <select name="select state" id="select">
+              <option value="">Select State</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujrat">Gujrat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerla">Kerla</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Punjab">Punjab</option>
+            </select>
+
+            <input type="submit" value="Make Payment" id="submit">
+            
+        </form>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+  customerDetails = [];
+
+  let checkoutdata = JSON.parse(localStorage.getItem("cartdata"))||[];
+
+  localStorage.setItem("checkoutdata",JSON.stringify(checkoutdata))
+
+  let nameID = document.getElementById("name")
+  let mobileID = document.getElementById("number")
+  let addsessID = document.getElementsByClassName("address")
+  let pincodeID = document.getElementById("pincode")
+  let stateID = document.getElementById("select")
+
+    let myform = document.querySelector("form")
+
+    myform.addEventListener("submit", (e) => {
+
+        e.preventDefault()
+
+        alert("Order Successfull")
+        localStorage.removeItem("cartdata")
+        window.location.href ="./index.html"
+        console.log("yes")
+
+        
+        let cusDetails = {
+          name: nameID.value,
+          number: mobileID.value,
+          address: addsessID.value,
+          pincode: pincodeID.value,
+          state: stateID.value
+        }
+
+        customerDetails.push(cusDetails)
+        localStorage.setItem("cus-details", JSON.stringify(customerDetails))
+
+    })
+
+</script>

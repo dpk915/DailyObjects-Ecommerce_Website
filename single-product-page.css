@@ -1,0 +1,190 @@
+body{
+  overflow-x: hidden;
+}
+#container{
+  width: 98%;
+  margin: auto;
+  box-sizing: border-box;
+}
+#product-container {
+    display: flex;
+    background-color: white;
+    width: 95%;
+    margin: auto;
+  }
+  .wrap {
+    display: flex;
+    width: 45%;
+    height: 660px;
+  }
+  #detail-card{
+    display: flex;
+    width: 45%;
+    margin-left: 50px;
+    font-family: Graphik Regular,sans-serif!important;
+  }
+  .card{
+    width:70%;
+    margin: auto;
+    
+  }
+  .span1{
+    text-decoration: line-through;
+    padding-left: 15px;
+    color: #909090;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Trade Gothic LT Pro,sans-serif;
+    font-family: Graphik Regular,sans-serif!important;
+  }
+  .span2{
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Trade Gothic LT Pro,sans-serif;
+    font-family: Graphik Regular,sans-serif!important;
+  }
+  .span3{
+    font-size: 14px;
+    color: #909090;
+    padding-left: 15px;
+    font-family: Graphik Regular,sans-serif!important;
+  }
+  .pricediv{
+    display: flex;
+    align-items: center;
+    margin-bottom: 7%;
+  }
+  .name {
+    font-size: 24px;
+    margin: 0 0 13px;
+    font-family: Graphik Regular,sans-serif!important;
+    font-weight: 400;
+  }
+  .checkbutton{
+    width: 18%;
+    height: 41px;
+    border: none;
+    margin-bottom: 7%;
+  }
+  .cartBtn{
+    width: 100%;
+    height: 50px;
+    background-color: #20a87e;
+    color: white;
+    font-weight: bolder;
+    font-size: 97%;
+    margin-bottom: 7%;
+  }
+  #detail-card input{
+    width: 80%;
+    height: 40px;
+    border: none;
+    background-color: #F5F5F5;
+  }
+  #slide {
+    /* border-radius: 5px; */
+    width: 100%;
+    background-color: #F5F5F5;
+  }
+  button:hover {
+    cursor: pointer;
+    /* border: 5px solid transparent; */
+  }
+  button{
+    background-color: #F5F5F5;
+    border: none;
+  }
+  button h1{
+    font-weight: lighter;
+  }
+  #detail-card h3{
+    color: red;
+    font-size: 16px;
+  }
+  #detail-card h2{
+    margin-bottom: 7%;
+  }
+#details-1{
+    display: flex;;
+    width: 95%;
+    margin: auto;
+}
+.data{
+    align-content: center;
+    padding-top: 13%;
+    padding-left: 7%;
+    font-family: "Graphik Regular", sans-serif;
+    font-size: 18px;
+    color: #000;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid red; */
+}
+.data p{
+    width: 70%;
+    
+}
+#details-2{
+    display: flex;;
+    width: 95%;
+    margin: auto;
+}
+#details-3{
+    display: flex;;
+    width: 95%;
+    margin: auto;
+}
+#details-4{
+    display: flex;;
+    width: 95%;
+    margin: auto;
+}
+#details-5{
+    display: flex;;
+    width: 95%;
+    margin: auto;
+}
+#details-6{
+    display: flex;;
+    width: 95%;
+    margin: auto;
+}
+#products-1{
+    display: flex;;
+    width: 95%;
+    font-family: 'Trade Gothic LT Pro', sans-serif !important;
+    overflow-x: auto;
+    margin: auto;
+}
+#products-1:hover{
+  cursor: pointer;
+}
+#products-1>div{
+   min-width: 15%;
+   width: 15%;
+   padding-left: 10px;
+   padding-right: 10px;
+}
+#products-1 img{
+    width: 100%;
+    background-color: #F5F5F5;
+    height: 280px;
+}
+h1{
+    font-family: 'Trade Gothic LT Pro', sans-serif !important;
+    margin-left: 3%;
+    margin-top: 50px;
+}
+#products-1>div>p{
+  width: 220px;
+  font-family: 'Trade Gothic LT Pro', sans-serif !important;
+  color: rgba(0,0,0,.87);
+  height: 32px;
+  white-space: wrap;
+  overflow: hidden;
+  font-size: small;
+}
+.hidden{
+  text-overflow: ellipsis;
+}
