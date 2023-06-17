@@ -1,6 +1,4 @@
-
-
-let usr = JSON.parse(localStorage.getItem("usr"))||[]
+let usr = JSON.parse(localStorage.getItem("usr")) || []
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 
